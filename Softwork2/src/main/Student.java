@@ -7,6 +7,9 @@ public class Student {
 	private float chinese_score;
 	private float math_score;
 	private float English_score;
+	
+	
+	
 	public Student(String number,String name,float a,float b ,float c) {
 		this.number = number;
 		this.name = name;
@@ -45,5 +48,6 @@ public class Student {
 	public void setEnglish_score(float english_score) {
 		English_score = english_score;
 	}
+	
 
 }
