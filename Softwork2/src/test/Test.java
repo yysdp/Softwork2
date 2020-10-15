@@ -6,6 +6,8 @@ import org.easymock.EasyMock;
 
 import main.AverageMax;
 import main.Find;
+import main.Main;
+import main.Main_Interface;
 import main.Read;
 import main.Sort;
 import main.Student;
@@ -56,6 +58,19 @@ class Test {
 		EasyMock.replay(find);
 		assertEquals(find.findname("zhl", stu),2);
 		assertEquals(find.findnumber("002", stu),1);
+	
+	}
+	@org.junit.jupiter.api.Test
+	void test2() {
+		Main_Interface main = new Main();
+		String path="sutdent.txt";
+		
+		Student[] stu = new Student[4];
+		stu[0] = new Student("001", "zhl", 100, 100, 60);
+		stu[1] = new Student("002", "ys", 88, 99, 77);
+		stu[2] = new Student("003", "lgy", 86, 168, 100);
+		stu[3] = new Student("004", "cyc", 96, 69, 60);
+		
 	
 	}
 }
