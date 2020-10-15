@@ -4,7 +4,7 @@ package main;
  * 继承此接口，实现average和max方法，
  * */
 public interface AverageMax_Interface {
-	//根据学生实体类输出各科平均值、最大值，
+	//根据学生实体类输出各科平均值、最大值并返回，
 	public abstract float[] average(Student[] stu);
 	public abstract float[] max(Student[] stu);
 

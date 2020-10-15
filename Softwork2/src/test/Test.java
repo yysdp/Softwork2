@@ -34,7 +34,7 @@ class Test {
 		Student[] stu = new Student[4];
 		stu[0] = new Student("001", "zhl", 100, 100, 60);
 		stu[1] = new Student("002", "ys", 88, 99, 77);
-		stu[2] = new Student("003", "lgy", 86, 168, 100);
+		stu[2] = new Student("003", "lgy", 86, 68, 100);
 		stu[3] = new Student("004", "cyc", 96, 69, 60);
 		
 		Read_Interface read = EasyMock.createMock(Read_Interface.class);//模拟的
@@ -51,11 +51,13 @@ class Test {
 		assertEquals(main.findnumber("002"),1);
 		assertEquals(main.findname("zhl"),2);
 		
-		float[] so = {66,77,88,99};
-		Sort_Interface sort = EasyMock.createMock(Sort_Interface.class);//模拟的
-		EasyMock.expect(sort.sort(stu)).andReturn(so);
-		EasyMock.replay(sort);
-		main.setSort(sort);
+		float[] so = new float[]{225,254,260,264};
+		//Sort_Interface sort = EasyMock.createMock(Sort_Interface.class);//模拟的
+		Sort_Interface sort_real = new Sort();
+		//sort_real.sort(stu);
+		//EasyMock.expect(sort.sort(stu)).andReturn(so);
+		//EasyMock.replay(sort);
+		main.setSort(sort_real);
 		assertArrayEquals(so,main.sort());
 		
 		AverageMax_Interface averageMax = EasyMock.createMock(AverageMax_Interface.class);//模拟的
