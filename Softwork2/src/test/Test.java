@@ -43,13 +43,14 @@ class Test {
 		main.setRead(read);		
 		stu = main.read(path);
 	    
-	    Find_Interface find = EasyMock.createMock(Find_Interface.class);//模拟的
-		EasyMock.expect(find.findnumber("002", stu)).andReturn(1);
-		EasyMock.expect(find.findname("zhl", stu)).andReturn(2);
-		EasyMock.replay(find);
-		main.setFind(find);
-		assertEquals(main.findnumber("002"),1);
-		assertEquals(main.findname("zhl"),2);
+		Find_Interface find = EasyMock.createMock(Find_Interface.class);
+//		EasyMock.expect(find.findnumber("002", stu)).andReturn(new float[]{88, 99, 77});
+//		EasyMock.expect(find.findname("zhl", stu)).andReturn(new float[]{100, 100, 60});
+//		EasyMock.replay(find);
+	    Find_Interface find_real = new Find();
+		main.setFind(find_real);
+		assertArrayEquals(main.findnumber("002"),new float[]{88, 99, 77});
+		assertArrayEquals(main.findname("zhl"),new float[]{100, 100, 60});
 		
 		float[] so = new float[]{225,254,260,264};
 		//Sort_Interface sort = EasyMock.createMock(Sort_Interface.class);//模拟的
