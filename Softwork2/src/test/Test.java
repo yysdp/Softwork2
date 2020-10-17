@@ -23,10 +23,7 @@ class Test {
 	 * 统计每一科平均分，最高分，程业超 
 	 * 按照总成绩排序 张海亮 
 	 * 按学号或姓名查找成绩 李光远
-	 */
-	
-	
-	
+	 */	
 	@org.junit.jupiter.api.Test
 	void test() {
 		Main main = new Main();
@@ -69,11 +66,8 @@ class Test {
 		EasyMock.replay(averageMax);
 		main.setAverageMax(averageMax);
 		assertArrayEquals(max,main.max());
-		assertArrayEquals(average,main.average());
-		
-		
-	
-		
+		assertArrayEquals(average,main.average());	
 	
 	}
 }
+
