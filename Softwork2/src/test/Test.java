@@ -27,7 +27,7 @@ class Test {
 	@org.junit.jupiter.api.Test
 	void test() {
 		Main main = new Main();
-		String path="sutdent.txt";
+		String path="student.txt";
 //		Student[] stu = new Student[4];
 //		stu[0] = new Student("001", "zhl", 100, 100, 60);
 //		stu[1] = new Student("002", "ys", 88, 99, 77);
@@ -37,21 +37,25 @@ class Test {
 		Read_Interface read_real = new Read();
 		main.setRead(read_real);
 		Student[] stu = main.read(path);
-		
+	
 //		Read_Interface read = EasyMock.createMock(Read_Interface.class);//模拟的
 //		EasyMock.expect(read.read(path)).andReturn(stu);
 //		EasyMock.replay(read);
 //		main.setRead(read);		
 
 	    
-		Find_Interface find = EasyMock.createMock(Find_Interface.class);
+		//Find_Interface find = EasyMock.createMock(Find_Interface.class);
 //		EasyMock.expect(find.findnumber("002", stu)).andReturn(new float[]{88, 99, 77});
 //		EasyMock.expect(find.findname("zhl", stu)).andReturn(new float[]{100, 100, 60});
 //		EasyMock.replay(find);
-	    Find_Interface find_real = new Find();
+		
+		Find_Interface find_real = new Find();
 		main.setFind(find_real);
 		assertArrayEquals(main.findnumber("002"),new float[]{88, 99, 77});
 		assertArrayEquals(main.findname("zhl"),new float[]{100, 100, 60});
+		
+//		assertArrayEquals(main.findnumber("002"),new float[]{88, 99, 77});
+//		assertArrayEquals(main.findname("zhl"),new float[]{100, 100, 60});
 		
 		float[] so = new float[]{225,254,260,264};
 		//Sort_Interface sort = EasyMock.createMock(Sort_Interface.class);//模拟的
@@ -63,14 +67,22 @@ class Test {
 		assertArrayEquals(so,main.sort());
 		
 //		AverageMax_Interface averageMax = EasyMock.createMock(AverageMax_Interface.class);//模拟的
-		float[] max= {100,100,100};
-		float[] average= {60,70,80};
+		float[] max= {100,100,100,264};
+		float[] average= {(float) 92.5,(float) 84.0,(float) 74.25};
 //		EasyMock.expect(averageMax.average(stu)).andReturn(average);
 //		EasyMock.expect(averageMax.max(stu)).andReturn(max);
 //		EasyMock.replay(averageMax);
 //		main.setAverageMax(averageMax);
 		AverageMax_Interface averageMax_real = new AverageMax();
 		main.setAverageMax(averageMax_real);
+	
+		for(int i=0;i<main.max().length;i++) {
+			System.out.print(main.max()[i]+" ");
+		}
+		System.out.println();
+		for(int i=0;i<main.average().length;i++) {
+			System.out.print(main.average()[i]+" ");
+		}
 		assertArrayEquals(max,main.max());
 		assertArrayEquals(average,main.average());	
 	
