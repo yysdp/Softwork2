@@ -8,4 +8,5 @@ public interface Main_Interface {
 	public abstract float[] findname(String name);
 	public abstract float[] average();
 	public abstract float[] max();
+	public abstract void execute();
 }

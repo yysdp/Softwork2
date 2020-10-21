@@ -6,9 +6,36 @@ public class Main implements Main_Interface{
 	private Read_Interface read;
 	private Sort_Interface sort;
 	private Student[] stu;
+	String path;
+	String name;
+	String num;
 	
 	
 	
+	public Student[] getStu() {
+		return stu;
+	}
+	public String getPath() {
+		return path;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getNum() {
+		return num;
+	}
+	public void setStu(Student[] stu) {
+		this.stu = stu;
+	}
+	public void setPath(String path) {
+		this.path = path;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setNum(String num) {
+		this.num = num;
+	}
 	public Find_Interface getFind() {
 		return find;
 	}
@@ -65,5 +92,28 @@ public class Main implements Main_Interface{
 		// TODO Auto-generated method stub
 		return averageMax.max(this.stu);
 	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Main main = new Main();
+		main.setFind(new Find());
+		main.setAverageMax(new AverageMax());
+		main.setSort(new Sort());
+		main.setRead(new Read());
+		main.setPath("student.txt");
+		main.setName("zhl");
+		main.setNum("002");
+		main.execute();
+	
 
+	}
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub	
+		read(path);
+		sort();
+		average();
+		max();
+		findname(name);
+		findnumber(num);		
+	}
 }
