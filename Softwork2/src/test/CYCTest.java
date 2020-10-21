@@ -21,10 +21,11 @@ public class CYCTest {
 		Main main = new Main();
 		String path="sutdent.txt";
 	 	Student[] stu = new Student[4];
-		stu[0] = new Student("001", "zhl", 90, 100, 60);
-		stu[1] = new Student("002", "ys", 80, 99, 70);
-		stu[2] = new Student("003", "lgy", 80, 68, 110);
-		stu[3] = new Student("004", "cyc", 90, 69, 60);
+	
+	 	stu[0] = new Student("001", "zhl", 100, 100, 60);
+		stu[1] = new Student("002", "ys", 88, 99, 77);
+		stu[2] = new Student("003", "lgy", 86, 68, 100);
+		stu[3] = new Student("004", "cyc", 96, 69, 60);
 		
 		Read_Interface read = EasyMock.createMock(Read_Interface.class);
 		EasyMock.expect(read.read(path)).andReturn(stu);

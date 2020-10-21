@@ -28,17 +28,21 @@ class Test {
 	void test() {
 		Main main = new Main();
 		String path="sutdent.txt";
-		Student[] stu = new Student[4];
-		stu[0] = new Student("001", "zhl", 100, 100, 60);
-		stu[1] = new Student("002", "ys", 88, 99, 77);
-		stu[2] = new Student("003", "lgy", 86, 68, 100);
-		stu[3] = new Student("004", "cyc", 96, 69, 60);
+//		Student[] stu = new Student[4];
+//		stu[0] = new Student("001", "zhl", 100, 100, 60);
+//		stu[1] = new Student("002", "ys", 88, 99, 77);
+//		stu[2] = new Student("003", "lgy", 86, 68, 100);
+//		stu[3] = new Student("004", "cyc", 96, 69, 60);
 		
-		Read_Interface read = EasyMock.createMock(Read_Interface.class);//模拟的
-		EasyMock.expect(read.read(path)).andReturn(stu);
-		EasyMock.replay(read);
-		main.setRead(read);		
-		stu = main.read(path);
+		Read_Interface read_real = new Read();
+		main.setRead(read_real);
+		Student[] stu = main.read(path);
+		
+//		Read_Interface read = EasyMock.createMock(Read_Interface.class);//模拟的
+//		EasyMock.expect(read.read(path)).andReturn(stu);
+//		EasyMock.replay(read);
+//		main.setRead(read);		
+
 	    
 		Find_Interface find = EasyMock.createMock(Find_Interface.class);
 //		EasyMock.expect(find.findnumber("002", stu)).andReturn(new float[]{88, 99, 77});
@@ -58,13 +62,15 @@ class Test {
 		main.setSort(sort_real);
 		assertArrayEquals(so,main.sort());
 		
-		AverageMax_Interface averageMax = EasyMock.createMock(AverageMax_Interface.class);//模拟的
+//		AverageMax_Interface averageMax = EasyMock.createMock(AverageMax_Interface.class);//模拟的
 		float[] max= {100,100,100};
 		float[] average= {60,70,80};
-		EasyMock.expect(averageMax.average(stu)).andReturn(average);
-		EasyMock.expect(averageMax.max(stu)).andReturn(max);
-		EasyMock.replay(averageMax);
-		main.setAverageMax(averageMax);
+//		EasyMock.expect(averageMax.average(stu)).andReturn(average);
+//		EasyMock.expect(averageMax.max(stu)).andReturn(max);
+//		EasyMock.replay(averageMax);
+//		main.setAverageMax(averageMax);
+		AverageMax_Interface averageMax_real = new AverageMax();
+		main.setAverageMax(averageMax_real);
 		assertArrayEquals(max,main.max());
 		assertArrayEquals(average,main.average());	
 	
