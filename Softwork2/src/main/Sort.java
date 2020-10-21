@@ -27,8 +27,9 @@ public class Sort implements Sort_Interface {
 				}
 			}
 		}
+		System.out.println("总分排序");
 		for(i=0;i<stu.length;i++) {
-			//System.out.println(stu[(int)arr[i][0]].getName()+":"+arr[i][1]);
+			System.out.println(stu[(int)arr[i][0]].getName()+":"+arr[i][1]);
 			ar[i]=arr[i][1];
 		}
 				

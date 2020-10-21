@@ -1,5 +1,11 @@
 package main;
 
+/*主类 
+ * 从文本读取数据 每一行 学号 姓名 数学成绩 语文成绩 英语成绩 于嵩 
+ *  统计每一科平均分，最高分，程业超 
+ *  按照总成绩排序 张海亮 
+ *  按学号或姓名查找成绩 李光远
+ * 集成测试*/
 public class Main implements Main_Interface{
 	private AverageMax_Interface averageMax;
 	private Find_Interface find;
@@ -9,7 +15,6 @@ public class Main implements Main_Interface{
 	String path;
 	String name;
 	String num;
-	
 	
 	
 	public Student[] getStu() {
