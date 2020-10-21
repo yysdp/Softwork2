@@ -18,6 +18,10 @@ public class Student {
 		this.English_score = c;
 		
 	}
+	public Student()
+	{
+		
+	}
 	public String getNumber() {
 		return number;
 	}
