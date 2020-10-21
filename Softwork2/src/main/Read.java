@@ -48,8 +48,14 @@ public class Read implements Read_Interface{
 		{
 			System.out.println(e);
 		}
-		
+		System.out.println("学号");
+		for(int i=0;i<sd.length;i++)
+		{
+			System.out.print(sd[i].getNumber()+" "+sd[i].getName()+" "+sd[i].getChinese_score()+" "+sd[i].getMath_score()+" "+sd[i].getEnglish_score());
+			System.out.println();
+		}
 		return sd;
+		
 	}
 
 }
