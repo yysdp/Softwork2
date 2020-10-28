@@ -15,7 +15,10 @@ public class AverageMax implements AverageMax_Interface {
 		//System.out.println("总分"+summatch+" "+sumchinese+" "+sumenglish);
 		avg[1] = summatch/stu.length;
 		avg[0] = sumchinese/stu.length;
-		avg[2] = sumenglish/stu.length;		
+		avg[2] = sumenglish/stu.length;
+		System.out.println("数学平均分："+avg[1]);
+		System.out.println("语文平均分："+avg[0]);
+		System.out.println("英语平均分："+avg[2]);
 		return avg;
 	}
 
@@ -34,7 +37,10 @@ public class AverageMax implements AverageMax_Interface {
 				max[3]=stu[i].getChinese_score()+stu[i].getMath_score()+stu[i].getEnglish_score();
 
 		}
-
+		System.out.println("最高语文："+max[0]);
+		System.out.println("最高数学："+max[1]);
+		System.out.println("最高英语："+max[2]);
+		System.out.println("最高总分："+max[3]);
 		return max;
 	}
 
